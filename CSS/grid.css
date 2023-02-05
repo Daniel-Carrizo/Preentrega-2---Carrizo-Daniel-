@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+
+body {
+    font-size: 1.5rem;
+    min-height: 100%;
+    font-family: 'Merriweather', serif;
+  
+}
+
+
+h1 {
+    color: aliceblue;
+    font-family: 'Sacramento', cursive;
+    font-size: 5.625rem;
+    line-height: 2;
+    margin: 50px auto 0 auto; 
+   }
+
+h2 {
+    color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    line-height: 2;
+}
+
+hr {
+    border: dotted #FFBABA 6px;
+    border-bottom: none;
+    width: 4%;
+    margin: 100px auto;
+}
+
+
+a {
+    color: #FFBABA;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px 20px;
+    text-decoration: none;
+}
+
+a:hover{
+    color: white;
+}
+
+
+.grid-layout >*{
+    box-shadow: -1px 1px 7px 0px black (0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+ }
+
+ .grid-layout {
+    display: grid;
+    gap: 0;
+    grid-template: 
+    "navbar" 50px
+    "header" 100px
+    "main" auto
+    "sidebar" 100px
+    "footer" 100px; 
+ }
+
+ .header {
+    grid-area: header;
+    background-color: #7B2869;
+ }
+ .navbar {
+    grid-area: navbar;
+    background-color: black;
+   
+    
+ }
+ .main {
+    grid-area: main;
+    background-color: #FFBABA;
+ }
+ .sidebar {
+    grid-area: sidebar;
+    background-color: #FFBABA;
+ }
+
+.footer {
+    grid-area: footer;
+    background-color: #7B2869;
+}
+
+
+@media (min-width: 600px) {
+    .grid-layout{
+        grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template-areas:
+        "header header"
+        "navbar navbar"
+        "sidebar main"
+        "footer footer";
+    }
+}
+@media (min-width: 900px) {
+    .grid-layout{
+        grid-template:
+            "header header header" 100px
+            "navbar navbar navbar" 70px
+            "main   main   sidebar" auto
+            "footer footer footer" 100px/200px auto 200px; 
+    }
+}
